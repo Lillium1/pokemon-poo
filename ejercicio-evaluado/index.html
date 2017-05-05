@@ -11,20 +11,24 @@
 		<img src="img/pokemon.png" alt="logo pokemon" width="800" height="300">
 			<H1>Gimnasio</H1>
 			<div class="pokemon">
-		        <select class="opcion">
+				<label for="pkmn1" class="sr-only">Atacante</label>
+		        <select class="opcion" id="pokemon_A">
 		            <option value="0">Pokémon A</option>
-		            <option value="1">Pokachu</option>
-		            <option value="2">Pocky</option>
+		            <option value="Pokachu">Pokachu</option>
+		            <option value="Pocky">Pocky</option>
 		         </select>
 		    </div>
 		    <div class="pokemon">
-		        <select class="opcion">
+		    	<label for="pkmn2" class="sr-only">Atacado</label>
+		        <select class="opcion" id="pokemon_B">
 		            <option value="0">Pokémon B</option>
-		            <option value="1">Pokachu</option>
-		            <option value="2">Pocky</option>
+		            <option value="Pokachu">Pokachu</option>
+		            <option value="Pocky">Pocky</option>
 		         </select>
 		    </div>
-		    <button class="btn btn-lg btn-primary btn-block submit-btn" onclick="seleccion()">Pelear</button>
+		    <button class="btn btn-lg btn-primary btn-block submit-btn" onclick="peleaPokemon()">Pelear</button>
+		    <br><br>
+		    <div id="imprimir"></div>
 		</div>
 	  </div>
     </section>

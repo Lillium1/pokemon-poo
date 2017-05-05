@@ -1,4 +1,4 @@
-function seleccion(){
+// EJERCICIO EVALUADO_LECCION 16_POO
 
 	function Pokemon(nombre,color,poderDeAtaque){
 		this.nombre = nombre;
@@ -18,28 +18,32 @@ function seleccion(){
 			pokemon.vida = pokemon.vida - this.poderDeAtaque;
 		}
 	}
-	Pokemon();
 
-	const Pokacho = new Pokemon('Pokacho','amarillo',55);
-	const Pocky = new Pokemon('Pocky','café',20);
+	function peleaPokemon(){
+		var atacante = document.getElementById('pokemon_A').value;
+		var atacado = document.getElementById('pokemon_B').value; 
+		var imprimir = document.getElementById('imprimir');
+		// validar que no sea el mismo pokemon
+		if (atacante=="Pokachu" && atacado=="Pokachu"){
+			alert("No puede atacarse a sí mismo")
+			return
+		}
+		if (atacante=="Pocky" && atacado=="Pocky"){
+			alert("No puede atacarse a sí mismo")
+			return
+		}
+		// validar que no este vacio
+		if (atacante=="0" || atacado=="0"){
+			alert("Escoja pokemon")
+			return
+		} 
 
-	function pelear(){
-		var seleccion_A = document.getElementsByClassName("opcion")[0];
-		var seleccion_B = document.getElementsByClassName("opcion")[1];
-		
-		// POKEMON A
-		for (var i = 0; i < seleccion_A.length; i++) {
-		 	//comprobar que escoja pokemon 
-		 	if (seleccion_A[i].value=="0") {
-		 		alert("Debe elegir Pokémon A");
-		 	}
+		var ataque = prompt('Ingrese valor de ataque');
+		var pokeObj1 = new Pokemon(atacante,'rojo', ataque);
+		var pokeObj2 = new Pokemon(atacado,'otro color', 40);
+		pokeObj1.atacar(pokeObj2);
 
-		// POKEMON B
-		for (var i = 0; i < seleccion_B.length; i++) {
-		 	//comprobar que escoja pokemon 
-		 	if (seleccion_B[i].value=="0") {
-		 		alert("Debe elegir Pokémon B");
-		 	}
+		imprimir.innerHTML = atacante + " atacó a " + pokeObj2.nombre + " y " + pokeObj2.nombre + " tiene " + pokeObj2.vida + " de vida restante";
 	}
-	pelear();
-}
+
+
