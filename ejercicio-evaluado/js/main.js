@@ -1,4 +1,4 @@
-// EJERCICIO EVALUADO_LECCION 16_POO
+// EJERCICIO EVALUADO_LECCION 16_POO_pokemones
 
 	function Pokemon(nombre,color,poderDeAtaque){
 		this.nombre = nombre;
